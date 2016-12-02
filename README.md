@@ -54,11 +54,10 @@ A random forest classification run on Subject Segmentation data. This program ca
 
 The ***input file*** to generated the Random Forest model should be in the following **CSV** format
 
-+---------------+--------------------------+-----------------+
 
-|SubjectID| , ... feature vectors ... , |SegmentID|
-
-+---------------+--------------------------+-----------------+
+| SubjectID,        | ...feature vectors...,           | SegmentID  |
+| ------------- |:-------------:| -----:|
+| 123  ,   | ..., | 5 |
 
 In data cleansing step the **header**, the **first** and the **last** columns are dropped, 
 The feature vectors can be expanded and collapsed as desired but a minimum one is required.
@@ -120,11 +119,10 @@ The feature vectors can be expanded and collapsed as desired but a minimum one i
 
 The ***input file*** on which the trained model has to be run should be in the following ***CSV*** format
 
-|---------------|--------------------------|
 
-|SubjectID      | , ... feature vectors ...|
-
-|---------------|--------------------------|
+| SubjectID,        | ...feature vectors...           | 
+| ------------- |:-------------:| 
+| 123  ,   | ...|
 
 In data cleansing step the **first** column and the **header** are dropped, the feature vectors can be expanded and collapsed as desired but a minimum one is required.
 The feature vectors should be mapped to the **same length** when the Random Forest Model was generated and saved.
@@ -163,11 +161,9 @@ A random forest classification run on SubjectSegmentation data. This program can
 
 The ***input files*** to generated the Random Forest model and to run predictions should be in the following **CSV** format
 
-+---------------+--------------------------+-----------------+
-
-|SubjectID| , ... feature vectors ... , |SegmentID|
-
-+---------------+--------------------------+-----------------+
+| SubjectID,        | ...feature vectors...,           | SegmentID  |
+| ------------- |:-------------:| -----:|
+| 123  ,   | ..., | 5 |
 
 In data cleansing step the **header**, the **first** and the **last** columns are dropped, 
 The feature vectors can be expanded and collapsed as desired but a minimum one is required.
@@ -235,11 +231,9 @@ A k-means clustering run on SubjectSegmentation data. This program can generate 
 
 The ***input file*** to generated the Random Forest model should be in the following **CSV** format
 
-+---------------+--------------------------+-----------------+
-
-|SubjectID| , ... feature vectors ... , |SegmentID|
-
-+---------------+--------------------------+-----------------+
+| SubjectID,        | ...feature vectors...,           | SegmentID  |
+| ------------- |:-------------:| -----:|
+| 123  ,   | ..., | 5 |
 
 In data cleansing step the **header**, the **first** and the **last** columns are dropped, 
 The feature vectors can be expanded and collapsed as desired but a minimum one is required.
@@ -289,11 +283,9 @@ The feature vectors can be expanded and collapsed as desired but a minimum one i
 
 The ***input file*** on which the trained model has to be run should be in the following ***CSV*** format
 
-+---------------+-------------------------+
-
-|SubjectID| , ... feature vectors ... 
-
-+---------------+-------------------------+
+| SubjectID,        | ...feature vectors...           |
+| ------------- |:-------------:| 
+| 123  ,   | ... | 
 
 In data cleansing step the **first** column and the **header** are dropped, the feature vectors can be expanded and collapsed as desired but a minimum one is required.
 The feature vectors should be mapped to the **same length** when the k-means Model was generated and saved.
@@ -326,11 +318,9 @@ The feature vectors should be mapped to the **same length** when the k-means Mod
 
 The ***input file*** on which the trained model has to be run should be in the following ***CSV*** format
 
-+---------------+--------------------------+-----------------+
-
-|SubjectID| , ... feature vectors ... , |SegmentID|
-
-+---------------+--------------------------+-----------------+
+| SubjectID,        | ...feature vectors...,           | SegmentID  |
+| ------------- |:-------------:| -----:|
+| 123  ,   | ..., | 5 |
 
 In data cleansing step the **header**, the **first** and the **last** columns are dropped, the feature vectors can be expanded and collapsed as desired but a minimum one is required.
 
@@ -381,11 +371,9 @@ A Principal Component Analysis on SubjectSegmentation data.
 
 The ***input file*** to reduce the dimentionality should be in the following **CSV** format
 
-+---------------+--------------------------+-----------------+
-
-|SubjectID| , ... feature vectors ... , |SegmentID|
-
-+---------------+--------------------------+-----------------+
+| SubjectID,        | ...feature vectors...,           | SegmentID  |
+| ------------- |:-------------:| -----:|
+| 123  ,   | ..., | 5 |
 
 In data cleansing step the **first** column is dropped, 
 The feature vectors can be expanded and collapsed as desired but a minimum one is required.
@@ -396,11 +384,9 @@ The ***output file*** of PCA is in the following format and can be used as the *
 
 + [k-means -KMeansClustering](#2-k-means-clustering)
 
-+--------------+-------------------------------+----------------+
-
-|NIL- SubjectID| , ... condensed fatures ... , |SegmentID|
-
-+--------------+-------------------------------+----------------+
+| NIL- SubjectID,        | ...condensed feature vectors...,           | SegmentID  |
+| ------------- |:-------------:| -----:|
+| NIL  ,   | ..., | 5 |
 
 ### PCA
 
