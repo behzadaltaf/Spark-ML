@@ -109,7 +109,7 @@ The feature vectors can be expanded and collapsed as desired but a minimum one i
   --appName Subject_Segmentation_RF \
   --master spark://127.0.0.1/master \ 
   data/InputData. \
-  data/.out \
+  data/RFC.out \
   model/RFModel
 ```
 
@@ -147,8 +147,8 @@ The feature vectors should be mapped to the **same length** when the Random Fore
  spark-submit --class com.behzad.randomForest.RandomForestAnalysis target/SubjectSegmentation-1.0.0.jar \
   --appName Subject_Segmentation_RF \
   --master spark://127.0.0.1/master \ 
-  data/InputData. \
-  data/.out \
+  data/InputData.in \
+  data/RFA.out \
   model/RFModel
 ```
 
@@ -214,8 +214,8 @@ The feature vectors can be expanded and collapsed as desired but a minimum one i
   --categoricalFeaturesInfo 1=2,4=3 \
   --appName Subject_Segmentation_RF \
   --master spark://127.0.0.1/master \ 
-  data/InputDataForModelGeneration. \
-  data/InputDataForRFAnalysis. \
+  data/InputDataForModelGeneration.in \
+  data/InputDataForRFAnalysis.in \
   data/RF.out
 ```
 
@@ -274,7 +274,7 @@ The feature vectors can be expanded and collapsed as desired but a minimum one i
   --seed 1000 \
   --appName Subject_Segmentation_K-Means \
   --master spark://127.0.0.1/master \
-  data/InputData. \
+  data/InputData.in \
   data/Kmeans.out \
   data/KMeansModel
 ```
@@ -310,7 +310,7 @@ The feature vectors should be mapped to the **same length** when the k-means Mod
   --appName Subject_Segmentation_RF \
   --master spark://127.0.0.1/master \ 
   data/InputData. \
-  data/.out \
+  data/KMA.out \
   model/KMeansModel
 ```
 
@@ -356,7 +356,7 @@ In data cleansing step the **header**, the **first** and the **last** columns ar
   --seed 1000 \
   --appName Subject_Segmentation_K-Means \
   --master spark://127.0.0.1/master \
-  data/InputData. \
+  data/InputData.in \
   data/Kmeans.out
 ```
 
@@ -412,6 +412,6 @@ A Principal Component Analysis on Subject Segmentation data.
   --k 8 \
   --appName Subject_Segmentation_PCA\
   --master spark://127.0.0.1/master \
-  data/InputData. \
+  data/InputData.in \
   data/PCA.out 
 ```
