@@ -23,10 +23,9 @@
   * The subject ID and the header columns are added to enable direct k-means/Random Forest usage
   */
 
-package com.behzad.cs.pca
+package com.behzad.pca
 
-import com.behzad.cs.{AbstractParams, MLUtil}
-import MLUtil._
+import com.behzad.{AbstractParams, MLUtil}
 import org.apache.spark.{SparkConf, SparkContext}
 import org.apache.spark.mllib.feature.PCA
 import scopt.OptionParser

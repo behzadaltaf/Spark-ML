@@ -1,4 +1,4 @@
-package com.behzad.cs
+package com.behzad
 
 import org.apache.spark.mllib.linalg.Vectors
 import org.junit.runner.RunWith

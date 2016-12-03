@@ -1,4 +1,4 @@
-package com.behzad.cs.pca
+package com.behzad.pca
 
 import java.io.File
 

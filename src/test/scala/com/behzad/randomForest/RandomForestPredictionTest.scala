@@ -1,4 +1,4 @@
-package com.behzad.cs.randomForest
+package com.behzad.randomForest
 
 import java.io.File
 

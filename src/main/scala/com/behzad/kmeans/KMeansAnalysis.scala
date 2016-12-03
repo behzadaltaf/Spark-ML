@@ -1,8 +1,6 @@
 /**
-  * A Random Forest classification org.apache.spark.apache.org/docs/latest/mllib-ensembles.html#random-forests
-  * implementation that classifies a feature vector into a class using an already built model from
-  * SubjectRandomForestClassification.
-  *
+  * A k-means clustering org.apache.spark.apache.org/docs/latest/mllib-clustering.html#k-means implementation
+  * that clusters a feature vector into a cluster using an already built model from SubjectKMeansClustering
   * The input file to the program is of the following CSV format
   *
   * |-----------+----------------------------------
@@ -17,33 +15,31 @@
   *
   */
 
-package com.behzad.cs.randomForest
+package com.behzad.kmeans
 
-import com.behzad.cs.{AbstractParams, MLUtil}
-import MLUtil._
+import com.behzad.{AbstractParams, MLUtil}
 import org.apache.spark.{SparkConf, SparkContext}
-import org.apache.spark.mllib.tree.model.RandomForestModel
+import org.apache.spark.mllib.clustering.KMeansModel
 import scopt.OptionParser
 
 /**
   * Created by Behzad Altaf
   */
-object RandomForestAnalysis {
+object KMeansAnalysis {
 
   case class Params(
                      inputFile: String = null,
                      outputFile: String = null,
                      modelLocation: String = null,
                      master: String = "local",
-                     appName: String = "Subject Segmentation Analysis using Random Forest Classification")
-    extends AbstractParams[Params]
+                     appName: String = "Subject Segmentation Analysis using k-Means") extends AbstractParams[Params]
 
-  def main(args: Array[String]) = {
+def main(args: Array[String]) = {
     val defaultParams = Params()
 
     //Takes care of command line input params and provides in a Params object
-    val parser = new OptionParser[Params]("RandomForestAnalysis") {
-      head("RandomForestAnalysis: a random forest analysis run on Subject Segmentation data.")
+    val parser = new OptionParser[Params]("SubjectKMeansAnalysis") {
+      head("SubjectKMeansAnalysis: a k-means analysis run on Subject Segmentation data.")
       opt[String]("master")
         .text(s"master url, default: ${defaultParams.master}")
         .action((x, c) => c.copy(master = x))
@@ -74,16 +70,16 @@ object RandomForestAnalysis {
           |
           |In data cleansing step the first column and the header is dropped,           
           |The feature vectors can be expanded and collapsed as desired but a minimum one is required.
-          |The feature vectors should be mapped to the same length when the Random Forest Model
+          |The feature vectors should be mapped to the same length when the k-Means Model
           |was generated and saved.
           |
-          | bin/spark-submit --class com.wipro.cto.cs.randomForest.RandomForestAnalysis \
+          | bin/spark-submit --class com.wipro.cto.cs.kmeans.KMeansAnalysis \
           |  SubjectSegmentation-1.0.0-SNAPSHOT.jar \
-          |  --appName Subject_Segmentation_RFA \
+          |  --appName Subject_Segmentation_KMA \
           |  --master spark://127.0.0.1/master \ 
           |  data/InputData.csv \
           |  data/Subject.out \
-          |  model/SubjectRFModel
+          |  model/SubjectKMeansModel
         """.stripMargin)
     }
 
@@ -108,8 +104,8 @@ object RandomForestAnalysis {
     //Drops the header and the first columns
     val cleansedData = getCleansedDataForAnalysis(rawData)
 
-    //Loads the Random Forest model from the provided location
-    val model = RandomForestModel.load(sc, params.modelLocation)
+    //Loads the KMEANS model from the provided location
+    val model = KMeansModel.load(sc, params.modelLocation)
 
     //Predicts the feature vector into a cluster and appends the cluster info in the end
     val predictedData = cleansedData.map { datum =>

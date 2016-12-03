@@ -1,4 +1,4 @@
-package com.behzad.cs.randomForest
+package com.behzad.kmeans
 
 import java.io.File
 
@@ -13,15 +13,15 @@ import org.specs2.specification.BeforeAfterExample
   * Created by Behzad Altaf
   */
 @RunWith(classOf[JUnitRunner])
-class RandomForestClassificationTest extends SpecificationWithJUnit with BeforeAfterExample {
+class KMeansClusteringTest extends SpecificationWithJUnit with BeforeAfterExample {
 
   var param: Array[String] = _
   var pcaParam: Array[String] = _
 
   val inputFileName = "data/Features.csv"
   val pcaInputFileName = "pca/PCA_output"
-  val outputFileName = "data/RFC_output"
-  val outputModelLocation = "data/RFC_Model"
+  val outputFileName = "data/KMeansAnalysis_output"
+  val outputModelLocation = "data/KMeansAnalysis_Model"
 
   val outputFile: File = new File(outputFileName)
   val outputModel: File = new File(outputModelLocation)
@@ -33,33 +33,30 @@ class RandomForestClassificationTest extends SpecificationWithJUnit with BeforeA
     pcaParam = Array(pcaInputFileName, outputFileName, outputModelLocation)
   }
 
-  "Subject Segmentation Random Forest Classification implementation" should {
+  "Subject Segmentation k-means clustering implementation" should {
     "create an output file and an output model which is a directory with supplied names" in {
-      RandomForestClassification.main(param)
+      KMeansClustering.main(param)
       outputFile must exist
       outputFile must beAFile
-      outputFile must haveName("RFC_output")
+      outputFile must haveName("KMeansAnalysis_output")
       outputModel must exist
       outputModel must beADirectory
-      outputModel must haveName("RFC_Model")
+      outputModel must haveName("KMeansAnalysis_Model")
     }
   }
 
-
-/*
-  "Subject Segmentation Random Forest Classification implementation" should {
+/*  "Subject Segmentation k-means clustering implementation" should {
     "be able to use output from PCA as an input and " +
       "create an output file and an output model which is a directory with supplied names" in {
-      RandomForestClassification.main(pcaParam)
+      KMeansClustering.main(pcaParam)
       outputFile must exist
       outputFile must beAFile
-      outputFile must haveName("SubjectRFC_output")
+      outputFile must haveName("SubjectKMeansAnalysis_output")
       outputModel must exist
       outputModel must beADirectory
-      outputModel must haveName("SubjectRFC_Model")
+      outputModel must haveName("SubjectKMeansAnalysis_Model")
     }
-  }
-*/
+  }*/
 
   override protected def after: Unit = {
     outputFile.delete()

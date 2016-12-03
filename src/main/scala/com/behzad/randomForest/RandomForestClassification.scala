@@ -14,10 +14,9 @@
   *
   */
 
-package com.behzad.cs.randomForest
+package com.behzad.randomForest
 
-import com.behzad.cs.{AbstractParams, MLUtil}
-import MLUtil._
+import com.behzad.{AbstractParams, MLUtil}
 import org.apache.spark.{SparkConf, SparkContext}
 import org.apache.spark.mllib.evaluation.MulticlassMetrics
 import org.apache.spark.mllib.regression.LabeledPoint

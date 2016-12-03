@@ -1,4 +1,4 @@
-package com.behzad.cs.kmeans
+package com.behzad.randomForest
 
 import java.io.File
 
@@ -13,13 +13,13 @@ import org.specs2.specification.BeforeAfterExample
   * Created by Behzad Altaf
   */
 @RunWith(classOf[JUnitRunner])
-class KMeansAnalysisTest extends SpecificationWithJUnit with BeforeAfterExample {
+class RandomForestAnalysisTest extends SpecificationWithJUnit with BeforeAfterExample {
 
   var param: Array[String] = _
 
-  val inputFileName = "data/kmeans/kmeansAnalysis.csv"
-  val outputFileName = "data/kmeans/kmeansAnalysis_output"
-  val modelLocation = "data/kmeans/KMeansAnalysis_Model"
+  val inputFileName = "data/randomforest/randomForestAnalysis.csv"
+  val outputFileName = "data/randomforest/randomForestAnalysis_output"
+  val modelLocation = "data/randomforest/RFC_Model"
 
   val outputFile: File = new File(outputFileName)
 
@@ -28,12 +28,12 @@ class KMeansAnalysisTest extends SpecificationWithJUnit with BeforeAfterExample 
     param = Array(inputFileName, outputFileName, modelLocation)
   }
 
-  "Subject Segmentation k-means Analysis implementation" should {
-    "create an output file with predictions using an input file with feature vectors and an existing k-means model" in {
-      KMeansAnalysis.main(param)
+  "Subject Segmentation Random Forest Analysis implementation" should {
+    "create an output file with predictions using an input file with feature vectors and an existing Random Forest model" in {
+      RandomForestAnalysis.main(param)
       outputFile must exist
       outputFile must beADirectory
-      outputFile must haveName("kmeansAnalysis_output")
+      outputFile must haveName("randomForestAnalysis_output")
     }
   }
 

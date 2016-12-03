@@ -1,4 +1,4 @@
-package com.behzad.cs.kmeans
+package com.behzad.kmeans
 
 import java.io.File
 
@@ -13,23 +13,24 @@ import org.specs2.specification.BeforeAfterExample
   * Created by Behzad Altaf
   */
 @RunWith(classOf[JUnitRunner])
-class KMeansPredictionTest extends SpecificationWithJUnit with BeforeAfterExample {
+class KMeansAnalysisTest extends SpecificationWithJUnit with BeforeAfterExample {
 
   var param: Array[String] = _
 
   val inputFileName = "data/kmeans/kmeansAnalysis.csv"
   val outputFileName = "data/kmeans/kmeansAnalysis_output"
+  val modelLocation = "data/kmeans/KMeansAnalysis_Model"
 
   val outputFile: File = new File(outputFileName)
 
   override protected def before {
     if (outputFile.exists()) FileUtils.deleteDirectory(outputFile)
-    param = Array(inputFileName, outputFileName)
+    param = Array(inputFileName, outputFileName, modelLocation)
   }
 
-  "Subject Segmentation k-means clustering implementation" should {
-    "create an output file with cluster prediction without saving the model" in {
-      KMeansPrediction.main(param)
+  "Subject Segmentation k-means Analysis implementation" should {
+    "create an output file with predictions using an input file with feature vectors and an existing k-means model" in {
+      KMeansAnalysis.main(param)
       outputFile must exist
       outputFile must beADirectory
       outputFile must haveName("kmeansAnalysis_output")

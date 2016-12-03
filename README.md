@@ -1,6 +1,6 @@
 ## Spark ML Data Segmentation
 
-This project is [Machine Learning](https://en.wikipedia.org/wiki/Machine_learning) implementation on data using [Spark MLLIB](https://spark.apache.org/docs/latest/mllib-guide.html). 
+This project is [Machine Learning](https://en.wikipedia.org/wiki/Machine_learning) implementation on data using [Spark MLLIB](https://spark.apache.org/dolatest/mllib-guide.html). 
 
 It provides three Machine Learning algorithms implementation [k-means clustering](https://en.wikipedia.org/wiki/K-means_clustering), [Random Forest](https://en.wikipedia.org/wiki/Random_forest) and Dimentionality Reduction mechanism [PCA] (https://en.wikipedia.org/wiki/Principal_component_analysis)
 
@@ -13,11 +13,11 @@ Please ensure the availability of the following software on the machine
 
 [Apache Maven 3.x](https://maven.apache.org/index.html)
 
-[Java 1.8.x ](https://docs.oracle.com/javase/8/docs/technotes/guides/install/install_overview.html)
+[Java 1.8.x ](https://dooracle.com/javase/8/dotechnotes/guides/install/install_overview.html)
 
 [Scala 2.10.4](http://www.scala-lang.org/download/2.10.4.html)
 
-Please also ensure your [SPARK_HOME](https://spark.apache.org/docs/latest/configuration.html#environment-variables) is set before you use the algorithms.
+Please also ensure your [SPARK_HOME](https://spark.apache.org/dolatest/configuration.html#environment-variables) is set before you use the algorithms.
 
 ### Compilation Steps
 
@@ -40,13 +40,13 @@ The above step would create an `uber` jar in the `target` folder which can be ru
 
 ### Running on a Cluster 
 
-Please refer documentation on how to run `Spark` application on a cluster [here](docs/Stand-alone-cluster.md)
+Please refer documentation on how to run `Spark` application on a cluster [here](doStand-alone-cluster.md)
 
 The `jar` contains the following
 
 ## 1. Random Forest Classification
 
-- [Spark Random Forest](https://spark.apache.org/docs/latest/mllib-ensembles.html#random-forests)
+- [Spark Random Forest](https://spark.apache.org/dolatest/mllib-ensembles.html#random-forests)
 
 ### 1 a. RandomForestClassification: 
 
@@ -97,7 +97,7 @@ The feature vectors can be expanded and collapsed as desired but a minimum one i
 
 ### Submit Job
 ```
- spark-submit --class com.behzad.cs.randomForest.RandomForestClassification target/SubjectSegmentation-1.0.0.jar \
+ spark-submit --class com.behzad.randomForest.RandomForestClassification target/SubjectSegmentation-1.0.0.jar \
   --numClasses 6 \
   --numTrees 30 \
   --maxDepth 30 \
@@ -109,7 +109,7 @@ The feature vectors can be expanded and collapsed as desired but a minimum one i
   --categoricalFeaturesInfo 1=2,4=3 \
   --appName Subject_Segmentation_RF \
   --master spark://127.0.0.1/master \ 
-  data/InputData.csv \
+  data/InputData. \
   data/.out \
   model/RFModel
 ```
@@ -146,10 +146,10 @@ The feature vectors should be mapped to the **same length** when the Random Fore
 
 ### Submit Job
 ```
- spark-submit --class com.behzad.cs.randomForest.RandomForestAnalysis target/SubjectSegmentation-1.0.0.jar \
+ spark-submit --class com.behzad.randomForest.RandomForestAnalysis target/SubjectSegmentation-1.0.0.jar \
   --appName Subject_Segmentation_RF \
   --master spark://127.0.0.1/master \ 
-  data/InputData.csv \
+  data/InputData. \
   data/.out \
   model/RFModel
 ```
@@ -206,7 +206,7 @@ The feature vectors can be expanded and collapsed as desired but a minimum one i
 
 ### Submit Job
 ```
- spark-submit --class com.behzad.cs.randomForest.RandomForestPrediction target/SubjectSegmentation-1.0.0.jar \
+ spark-submit --class com.behzad.randomForest.RandomForestPrediction target/SubjectSegmentation-1.0.0.jar \
   --numClasses 6 \
   --numTrees 30 \
   --maxDepth 30 \
@@ -218,8 +218,8 @@ The feature vectors can be expanded and collapsed as desired but a minimum one i
   --categoricalFeaturesInfo 1=2,4=3 \
   --appName Subject_Segmentation_RF \
   --master spark://127.0.0.1/master \ 
-  data/InputDataForModelGeneration.csv \
-  data/InputDataForRFAnalysis.csv \
+  data/InputDataForModelGeneration. \
+  data/InputDataForRFAnalysis. \
   data/RF.out
 ```
 
@@ -227,7 +227,7 @@ The feature vectors can be expanded and collapsed as desired but a minimum one i
 
 ## 2. k-means Clustering
 
-[Spark k-means](http://spark.apache.org/docs/latest/mllib-clustering.html#k-means)
+[Spark k-means](http://spark.apache.org/dolatest/mllib-clustering.html#k-means)
 
 ### 2 a. KMeansClustering
 
@@ -272,7 +272,7 @@ The feature vectors can be expanded and collapsed as desired but a minimum one i
 
 ### Submit Job
 ```
- spark-submit --class com.behzad.cs.kmeans.KMeansClustering target/SubjectSegmentation-1.0.0.jar \
+ spark-submit --class com.behzad.kmeans.KMeansClustering target/SubjectSegmentation-1.0.0.jar \
   --k 5 \
   --runs 8 \
   --epsilon 1.0e-4 \
@@ -280,7 +280,7 @@ The feature vectors can be expanded and collapsed as desired but a minimum one i
   --seed 1000 \
   --appName Subject_Segmentation_K-Means \
   --master spark://127.0.0.1/master \
-  data/InputData.csv \
+  data/InputData. \
   data/Kmeans.out \
   data/KMeansModel
 ```
@@ -314,10 +314,10 @@ The feature vectors should be mapped to the **same length** when the k-means Mod
 
 ### Submit Job
 ```
- spark-submit --class com.behzad.cs.kmeans.KMeansAnalysis target/SubjectSegmentation-1.0.0.jar \
+ spark-submit --class com.behzad.kmeans.KMeansAnalysis target/SubjectSegmentation-1.0.0.jar \
   --appName Subject_Segmentation_RF \
   --master spark://127.0.0.1/master \ 
-  data/InputData.csv \
+  data/InputData. \
   data/.out \
   model/KMeansModel
 ```
@@ -358,7 +358,7 @@ In data cleansing step the **header**, the **first** and the **last** columns ar
 
 ### Submit Job
 ```
- spark-submit --class com.behzad.cs.kmeans.KMeansAnalysis target/SubjectSegmentation-1.0.0.jar \
+ spark-submit --class com.behzad.kmeans.KMeansAnalysis target/SubjectSegmentation-1.0.0.jar \
   --k 5 \
   --runs 8 \
   --epsilon 1.0e-4 \
@@ -366,7 +366,7 @@ In data cleansing step the **header**, the **first** and the **last** columns ar
   --seed 1000 \
   --appName Subject_Segmentation_K-Means \
   --master spark://127.0.0.1/master \
-  data/InputData.csv \
+  data/InputData. \
   data/Kmeans.out
 ```
 
@@ -375,7 +375,7 @@ In data cleansing step the **header**, the **first** and the **last** columns ar
 
 ## 3. Principal Component Analysis
 
-[Spark PCA](https://spark.apache.org/docs/1.4.1/mllib-dimensionality-reduction.html)
+[Spark PCA](https://spark.apache.org/do1.4.1/mllib-dimensionality-reduction.html)
 
 A Principal Component Analysis on SubjectSegmentation data.
 
@@ -422,10 +422,10 @@ A Principal Component Analysis on Subject Segmentation data.
 
 ### Submit Job
 ```
- spark-submit --class com.behzad.cs.pca.PCA target/SubjectSegmentation-1.0.0.jar \
+ spark-submit --class com.behzad.pca.PCA target/SubjectSegmentation-1.0.0.jar \
   --k 8 \
   --appName Subject_Segmentation_PCA\
   --master spark://127.0.0.1/master \
-  data/InputData.csv \
+  data/InputData. \
   data/PCA.out 
 ```

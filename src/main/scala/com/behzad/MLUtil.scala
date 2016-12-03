@@ -4,7 +4,7 @@
   *
   */
 
-package com.behzad.cs
+package com.behzad
 
 import java.util.concurrent.TimeUnit
 

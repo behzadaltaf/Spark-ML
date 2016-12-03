@@ -1,4 +1,4 @@
-package com.behzad.cs
+package com.behzad
 
 import org.apache.spark.{SparkConf, SparkContext}
 import org.specs2.mutable.SpecificationWithJUnit

@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package com.behzad.cs
+package com.behzad
 
 import scala.reflect.runtime.universe._
 
