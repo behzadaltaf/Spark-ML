@@ -21,7 +21,7 @@
             <groupId>org.apache.spark</groupId>
             <artifactId>spark-core_${scalaMajorVersion}</artifactId>
             <version>${sparkVersion}</version>
-            <scope>provided</scope>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.spark</groupId>
@@ -117,6 +117,7 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.18.1</version>
                 <configuration>
+                    <argLine>${argLine} -Xmx2048m -XX:MaxPermSize=256m</argLine>
                     <skipTests>false</skipTests>
                 </configuration>
             </plugin>
