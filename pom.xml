@@ -21,7 +21,7 @@
             <groupId>org.apache.spark</groupId>
             <artifactId>spark-core_${scalaMajorVersion}</artifactId>
             <version>${sparkVersion}</version>
-            <!--<scope>provided</scope>This needs to be enabled for building an uber jar-->
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.spark</groupId>
