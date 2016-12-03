@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/behzadaltaf/Spark-ML.svg?branch=master)](https://travis-ci.org/behzadaltaf/Spark-ML) [![Dependency Status](https://www.versioneye.com/user/projects/58429b58b1c38c0a43551ac8/badge.svg?style=flat-square)](https://www.versioneye.com/user/projects/58429b58b1c38c0a43551ac8) [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+
 ## Spark ML Data Segmentation
 
 This project is [Machine Learning](https://en.wikipedia.org/wiki/Machine_learning) implementation on data using [Spark MLLIB](https://spark.apache.org/dolatest/mllib-guide.html). 
