@@ -22,6 +22,7 @@ import org.apache.spark.mllib.regression.LabeledPoint
 import org.apache.spark.rdd._
 import org.apache.spark.{SparkConf, SparkContext}
 import scopt.OptionParser
+import com.behzad.MLUtil._
 
 /**
   * Created by Behzad Altaf

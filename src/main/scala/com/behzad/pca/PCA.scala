@@ -29,6 +29,7 @@ import com.behzad.{AbstractParams, MLUtil}
 import org.apache.spark.{SparkConf, SparkContext}
 import org.apache.spark.mllib.feature.PCA
 import scopt.OptionParser
+import com.behzad.MLUtil._
 
 /**
   * Created by Behzad Altaf

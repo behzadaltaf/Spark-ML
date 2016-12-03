@@ -24,6 +24,7 @@ import org.apache.spark.mllib.tree.RandomForest
 import org.apache.spark.mllib.tree.model.RandomForestModel
 import org.apache.spark.rdd.RDD
 import scopt.OptionParser
+import com.behzad.MLUtil._
 
 /**
   * Created by Behzad Altaf

@@ -18,6 +18,7 @@ import com.behzad.{AbstractParams, MLUtil}
 import org.apache.spark.mllib.clustering._
 import org.apache.spark.{SparkConf, SparkContext}
 import scopt.OptionParser
+import com.behzad.MLUtil._
 
 /**
   * Created by Behzad Altaf
