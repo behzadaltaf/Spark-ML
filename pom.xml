@@ -21,7 +21,7 @@
             <groupId>org.apache.spark</groupId>
             <artifactId>spark-core_${scalaMajorVersion}</artifactId>
             <version>${sparkVersion}</version>
-            <scope>test</scope>
+            <!--<scope>provided</scope>This needs to be enabled for building an uber jar-->
         </dependency>
         <dependency>
             <groupId>org.apache.spark</groupId>
@@ -117,7 +117,6 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.18.1</version>
                 <configuration>
-                    <argLine>${argLine} -Xmx2048m -XX:MaxPermSize=256m</argLine>
                     <skipTests>false</skipTests>
                 </configuration>
             </plugin>
