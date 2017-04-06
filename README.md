@@ -4,7 +4,7 @@
 
 This project is [Machine Learning](https://en.wikipedia.org/wiki/Machine_learning) implementation on data using [Spark MLLIB](https://spark.apache.org/dolatest/mllib-guide.html). 
 
-It provides three Machine Learning algorithms implementation [k-means clustering](https://en.wikipedia.org/wiki/K-means_clustering), [Random Forest](https://en.wikipedia.org/wiki/Random_forest) and Dimentionality Reduction mechanism [PCA] (https://en.wikipedia.org/wiki/Principal_component_analysis)
+It provides three Machine Learning algorithms implementation [k-means clustering](https://en.wikipedia.org/wiki/K-means_clustering), [Random Forest](https://en.wikipedia.org/wiki/Random_forest) and Dimentionality Reduction mechanism [PCA](https://en.wikipedia.org/wiki/Principal_component_analysis)
 
 
 ## Prerequisites
