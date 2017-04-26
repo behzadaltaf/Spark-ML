@@ -1,3 +1,5 @@
 language: java
-script: mvn clean verify
+script: 
+- export MAVEN_OPTS="-Xmx2469m -XX:MaxPermSize=512m"
+- mvn clean verify
 
